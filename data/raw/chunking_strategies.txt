@@ -1,0 +1,13 @@
+Chunking Strategies for Retrieval Systems
+
+Fixed-Size Chunking
+Fixed-size chunking splits a document into segments of a set number of tokens or words, often with a small overlap between consecutive chunks. This approach is simple to implement and fast to run, but it can cut sentences or ideas in half if a boundary falls in the middle of a thought.
+
+Recursive Chunking
+Recursive chunking tries to split on natural boundaries first, such as paragraphs, then sentences, and only falls back to a hard character limit if a section is still too large. This tends to preserve more semantic coherence than naive fixed-size splitting, at the cost of extra implementation complexity.
+
+Semantic Chunking
+Semantic chunking uses an embedding model to detect where the topic of a document shifts, and places chunk boundaries at those shift points rather than at a fixed length. This produces chunks that are more topically self-contained, which usually improves downstream retrieval precision, though it is more computationally expensive to compute.
+
+Choosing a Chunk Size
+Smaller chunks tend to improve precision because each chunk is more narrowly focused, but they can hurt recall if a relevant answer spans multiple chunks. Larger chunks preserve more context per chunk but dilute the embedding with unrelated content, which can push relevant chunks lower in a similarity ranking. A common starting point is 200 to 500 tokens per chunk with 10 to 20 percent overlap, then tuning based on evaluation results.

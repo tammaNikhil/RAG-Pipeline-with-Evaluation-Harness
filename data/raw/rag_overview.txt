@@ -1,0 +1,13 @@
+Sample Technical Document for RAG Evaluation Harness
+
+Overview of RAG Architecture
+Retrieval-Augmented Generation (RAG) enhances Large Language Models by grounding their answers on external knowledge documents retrieved during query execution.
+Instead of relying solely on parametric knowledge, the model queries an external index.
+
+Chunking and Embedding
+Text documents are split into smaller units using a fixed token/word window size with configured overlap.
+Vector embeddings are generated using an embedding model and persisted into a vector database like Chroma DB for fast similarity search.
+
+Evaluation Metrics
+Retrieval quality is measured using Recall@k, Precision@k, and Mean Reciprocal Rank (MRR).
+Answer quality is evaluated using Faithfulness (checking if claims are supported by context) and Answer Relevance.

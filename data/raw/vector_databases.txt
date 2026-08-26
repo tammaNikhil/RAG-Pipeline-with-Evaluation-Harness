@@ -1,0 +1,13 @@
+Vector Databases for Similarity Search
+
+What a Vector Database Does
+A vector database stores high-dimensional embeddings and provides efficient nearest-neighbor search over them, typically using an approximate nearest neighbor index rather than a brute-force scan. This lets a system find the most semantically similar items to a query in milliseconds, even across millions of vectors.
+
+Indexing Algorithms
+Most vector databases rely on approximate nearest neighbor algorithms such as HNSW, a graph-based method that trades a small amount of recall for large speed gains, or IVF, which partitions the vector space into clusters and only searches the most relevant clusters for a given query. The choice of index affects the tradeoff between query latency, memory usage, and recall accuracy.
+
+Popular Vector Database Options
+Chroma is a lightweight, embedded vector database well suited to local development and small to medium projects. Pinecone and Weaviate are managed, cloud-hosted vector databases designed for production workloads at scale. FAISS is a library rather than a full database, and is commonly used when a team wants full control over indexing behavior.
+
+Metadata Filtering
+Beyond similarity search, most vector databases support filtering results by metadata fields, such as restricting a search to documents from a specific source file or date range. Combining a similarity search with metadata filters is often called hybrid search and can significantly improve retrieval precision for structured corpora.

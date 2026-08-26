@@ -1,0 +1,27 @@
+# RAG Pipeline Configuration
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  chunks_file: "data/processed/chunks.jsonl"
+  vector_db_dir: "chroma_db"
+  golden_qa_file: "eval/golden_qa.json"
+  eval_results_dir: "eval/results"
+
+ingestion:
+  supported_extensions: [".txt", ".pdf", ".docx", ".html"]
+
+chunking:
+  strategy: "fixed_overlap" # fixed_overlap or recursive
+  chunk_size: 90
+  chunk_overlap: 20
+
+embedding:
+  model_name: "all-MiniLM-L6-v2"
+
+retrieval:
+  top_k: 3
+
+generation:
+  model_name: "gemini-3.5-flash-lite" # requires GEMINI_API_KEY env var; falls back to mock if unset
+  max_tokens: 500

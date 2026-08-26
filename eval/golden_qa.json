@@ -1,0 +1,72 @@
+[
+  {
+    "id": "qa_01",
+    "type": "factoid",
+    "question": "What is a downside of fixed-size chunking?",
+    "expected_answer": "It can cut sentences or ideas in half if a boundary falls in the middle of a thought.",
+    "relevant_chunk_ids": ["chunk_1"]
+  },
+  {
+    "id": "qa_02",
+    "type": "factoid",
+    "question": "What indexing algorithms do vector databases commonly use for approximate nearest neighbor search?",
+    "expected_answer": "HNSW, a graph-based method, and IVF, which partitions the vector space into clusters.",
+    "relevant_chunk_ids": ["chunk_10", "chunk_11"]
+  },
+  {
+    "id": "qa_03",
+    "type": "factoid",
+    "question": "Which vector database is described as lightweight and well suited to local development?",
+    "expected_answer": "Chroma is described as a lightweight, embedded vector database for local development.",
+    "relevant_chunk_ids": ["chunk_11"]
+  },
+  {
+    "id": "qa_04",
+    "type": "factoid",
+    "question": "What metrics are used to measure retrieval performance and answer quality in the evaluation harness?",
+    "expected_answer": "Retrieval quality is measured using Recall@k, Precision@k, and MRR. Answer quality is evaluated using Faithfulness and Answer Relevance.",
+    "relevant_chunk_ids": ["chunk_9"]
+  },
+  {
+    "id": "qa_05",
+    "type": "factoid",
+    "question": "Why should a RAG prompt separate retrieved context from the user's question?",
+    "expected_answer": "So the model does not confuse instructions with source material.",
+    "relevant_chunk_ids": ["chunk_5"]
+  },
+  {
+    "id": "qa_06",
+    "type": "factoid",
+    "question": "How does asking a model to cite chunk sources help a RAG system?",
+    "expected_answer": "It makes it easier to audit whether the generated answer is faithful to the retrieved context.",
+    "relevant_chunk_ids": ["chunk_6", "chunk_7"]
+  },
+  {
+    "id": "qa_07",
+    "type": "multi-hop",
+    "question": "What is a suggested starting point for chunk size and overlap, and why might smaller chunks hurt recall?",
+    "expected_answer": "A common starting point is 200 to 500 tokens with 10 to 20 percent overlap; smaller chunks can hurt recall if a relevant answer spans multiple chunks.",
+    "relevant_chunk_ids": ["chunk_3", "chunk_4"]
+  },
+  {
+    "id": "qa_08",
+    "type": "out-of-scope",
+    "question": "What is the distance from Earth to Alpha Centauri in light years?",
+    "expected_answer": "I don't know based on the provided context.",
+    "relevant_chunk_ids": []
+  },
+  {
+    "id": "qa_09",
+    "type": "ambiguous",
+    "question": "How do we store vector embeddings for fast similarity search?",
+    "expected_answer": "Vector embeddings are generated using an embedding model and persisted into a vector database like Chroma DB for fast similarity search.",
+    "relevant_chunk_ids": ["chunk_8", "chunk_9"]
+  },
+  {
+    "id": "qa_10",
+    "type": "factoid",
+    "question": "What is hybrid search in the context of vector databases?",
+    "expected_answer": "Combining a similarity search with metadata filters, which can significantly improve retrieval precision for structured corpora.",
+    "relevant_chunk_ids": ["chunk_12"]
+  }
+]

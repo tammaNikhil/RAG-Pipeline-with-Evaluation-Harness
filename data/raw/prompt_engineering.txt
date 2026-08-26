@@ -1,0 +1,13 @@
+Prompt Engineering for RAG Generation
+
+Grounding the Model in Retrieved Context
+A RAG prompt should clearly separate the retrieved context from the user's question, usually with explicit delimiters or labeled sections, so the model does not confuse instructions with source material. The prompt should instruct the model to answer using only the provided context and to say it does not know the answer if the context does not contain it.
+
+Handling Out-of-Scope Questions
+Without explicit instructions, language models will often try to answer from their own parametric knowledge even when the retrieved context is irrelevant. Adding a directive such as "if the answer is not contained in the context, respond that you don't know" substantially reduces hallucinated answers on out-of-scope or unanswerable questions.
+
+Citing Sources in the Answer
+Asking the model to cite which chunk or source supported each claim, for example by including a chunk identifier next to a sentence, makes it much easier to audit whether the generated answer is actually faithful to the retrieved context, and helps catch cases where the model drifts away from the source material.
+
+Controlling Answer Length and Format
+Specifying the desired answer format, such as a short factual sentence versus a multi-paragraph explanation, prevents the model from padding a simple factual answer with unrelated background information pulled from the rest of a large chunk.

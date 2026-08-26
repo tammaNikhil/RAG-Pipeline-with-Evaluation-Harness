@@ -1,0 +1,22 @@
+{
+  "num_test_cases": 10,
+  "retrieval": {
+    "avg_recall_at_k": 0.85,
+    "avg_precision_at_k": 0.4,
+    "avg_mrr": 0.8333
+  },
+  "generation": {
+    "avg_faithfulness": 1.0,
+    "avg_relevance": 0.4814
+  },
+  "failures": [
+    {
+      "id": "qa_02",
+      "query": "What indexing algorithms do vector databases commonly use for approximate nearest neighbor search?",
+      "expected_answer": "HNSW, a graph-based method, and IVF, which partitions the vector space into clusters.",
+      "generated_answer": "Based on the provided context, vector databases commonly rely on approximate nearest neighbor algorithms such as:\n\n* **HNSW**: A graph-based method that trades a small amount of recall for large speed gains [chunk_10, chunk_11].\n* **IVF**: A method that partitions the vector space into clusters and only searches the most relevant clusters for a given query [chunk_11].",
+      "faithfulness": 1.0,
+      "relevance": 0.16
+    }
+  ]
+}

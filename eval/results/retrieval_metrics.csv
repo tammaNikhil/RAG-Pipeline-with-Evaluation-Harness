@@ -1,0 +1,11 @@
+id,query,expected_ids,retrieved_ids,recall@k,precision@k,mrr
+qa_01,What is a downside of fixed-size chunking?,['chunk_1'],"['chunk_3', 'chunk_2', 'chunk_1']",1.0,0.3333,0.3333
+qa_02,What indexing algorithms do vector databases commonly use for approximate nearest neighbor search?,"['chunk_11', 'chunk_10']","['chunk_10', 'chunk_12', 'chunk_11']",1.0,0.6667,1.0
+qa_03,Which vector database is described as lightweight and well suited to local development?,['chunk_11'],"['chunk_11', 'chunk_12', 'chunk_10']",1.0,0.3333,1.0
+qa_04,What metrics are used to measure retrieval performance and answer quality in the evaluation harness?,['chunk_9'],"['chunk_9', 'chunk_8', 'chunk_3']",1.0,0.3333,1.0
+qa_05,Why should a RAG prompt separate retrieved context from the user's question?,['chunk_5'],"['chunk_5', 'chunk_6', 'chunk_8']",1.0,0.3333,1.0
+qa_06,How does asking a model to cite chunk sources help a RAG system?,"['chunk_6', 'chunk_7']","['chunk_5', 'chunk_7', 'chunk_6']",1.0,0.6667,0.5
+qa_07,"What is a suggested starting point for chunk size and overlap, and why might smaller chunks hurt recall?","['chunk_4', 'chunk_3']","['chunk_3', 'chunk_1', 'chunk_2']",0.5,0.3333,1.0
+qa_08,What is the distance from Earth to Alpha Centauri in light years?,[],"['chunk_4', 'chunk_12', 'chunk_10']",0.0,0.0,1.0
+qa_09,How do we store vector embeddings for fast similarity search?,"['chunk_8', 'chunk_9']","['chunk_10', 'chunk_9', 'chunk_8']",1.0,0.6667,0.5
+qa_10,What is hybrid search in the context of vector databases?,['chunk_12'],"['chunk_12', 'chunk_10', 'chunk_11']",1.0,0.3333,1.0
